@@ -1,6 +1,6 @@
 # encore_skn11
 
-## **sk 네트웍스 famliy ai camp를 진행하면서 배우고 실습한 코드를 기록하고 정리하는 공간**
+### **sk 네트웍스 famliy ai camp를 진행하면서 배우고 실습한 코드를 기록하고 정리하는 공간**
 
 - 2월 10일 월요일 - python의 변수와 자료형(python-basic-01,02번)
     - 숫자형
@@ -68,3 +68,8 @@
         - 코드의 반복 최소화, 유지보수 용이 
         - for 변수 in 객체 ro range(이상, 미만):
             (실행구문)
+    - while문
+        - while 조건식:
+            (실행 구문)
+        - break, continue(분기문) break를 하면 for or while문을 빠져나감
+        
