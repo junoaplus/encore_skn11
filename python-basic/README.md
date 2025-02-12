@@ -1,6 +1,6 @@
 # encore_skn11
 
-### **sk 네트웍스 famliy ai camp를 진행하면서 배우고 실습한 코드를 기록하고 정리하는 공간**
+### **sk 네트웍스 famliy ai camp를 진행하면서 배우고 실습한 코드를 기록하고 정리하는 공간(python 부분)**
 
 - 2월 10일 월요일 - python의 변수와 자료형(python-basic-01,02번)
     - 숫자형
