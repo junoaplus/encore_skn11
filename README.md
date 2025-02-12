@@ -43,7 +43,7 @@
 
 ---
 
-- 2월 11일 화요일 - python의 제어문(python-basic-03번)
+- 2월 11일 화요일 - python의 제어문(python-basic-03, 04번)
     - if문
         - if 조건 :
             맞으면 실행
@@ -72,4 +72,43 @@
         - while 조건식:
             (실행 구문)
         - break, continue(분기문) break를 하면 for or while문을 빠져나감
-        
+
+
+- 2월 12일 수요일 -python의 함수(python-basic-05번)
+    - 함수
+        - 함수를 만들어서 필요할때마다 호출해서 사용 가능해서 재사용과 유지 할떄 편리하다 
+        - def 함수(매개변수, 매개변수):
+            함수가 실행하는 코드
+           함수(인자, 인자)
+        - 위치인자 , 키워드인자 (위치인자와 키워드인자를 동시에 사용할 경우에는 **무조건 위치인자를 우선으로 사용해야 하다.**)
+        - 반환값
+            def 함수():
+                return 내용
+            result = 함수()
+            print(result)    #result내용(return돤 내용) 출력
+        - 패키징, 언패키징
+
+            - 패키징
+            def add_many(*args): 
+                result = 0
+                for i in args: 
+                result = result + i
+                return result 
+            add_many(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)    # 55
+            
+            - 언패키징
+            def sum(a, b, c):
+                return a + b + c
+            numbers = [1, 2, 3] # sum(numbers)    # 배열로 하나만 넘겨주면 에러 발생
+            print(sum(*numbers))    # 6
+    - 람다
+        - 일회성으로 사용할 간단한 함수를 만드는 것
+        - 변수명 = lambda (매개변수) : (함수 실행 내용)
+        - map 패키징과 비슷한 느낌, 람다에서 리스트를 실행 할때 하나씩 넣어서 실행해 주는 것.
+            리스트 = []
+            squared_numbers = map(lambda x: x**2, 리스트)
+            print(list(squared_numbers))   
+        - filter 조건을 주어서 조건에 맞는 요소를 리스트로 변환하여 출력 
+            리스트 = []
+            squared_numbers = filter(lambda x: x>100, 리스트)
+            print(list(squared_numbers))  # 100보다 큰 수만 리스트로 출력 됨  
