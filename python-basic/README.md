@@ -113,3 +113,7 @@
             리스트 = []
             squared_numbers = filter(lambda x : x > 100, 리스트)
             print(list(squared_numbers))  # 100보다 큰 수만 리스트로 출력 됨  
+
+---
+
+-
