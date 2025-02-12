@@ -107,9 +107,9 @@
         - 변수명 = lambda (매개변수) : (함수 실행 내용)
         - map 패키징과 비슷한 느낌, 람다에서 리스트를 실행 할때 하나씩 넣어서 실행해 주는 것.
             리스트 = []
-            squared_numbers = map(lambda x: x**2, 리스트)
+            squared_numbers = map(lambda x : x**2, 리스트)
             print(list(squared_numbers))   
         - filter 조건을 주어서 조건에 맞는 요소를 리스트로 변환하여 출력 
             리스트 = []
-            squared_numbers = filter(lambda x: x>100, 리스트)
+            squared_numbers = filter(lambda x : x > 100, 리스트)
             print(list(squared_numbers))  # 100보다 큰 수만 리스트로 출력 됨  
