@@ -116,4 +116,49 @@
 
 ---
 
--
+- 2월 13일 목요일 - python의 cladd(python-basic-06번)
+    - class
+        - 객체지향 프로그래밍을 지원하는 중요한 개념, 함수를 하나로 묶어 클래스를 만들어 여러개의 객체를 만들 수 있음
+        - 대문자로 선어 해야 된다
+        - 메서드 : self로 접근하기 위한 객체를 의미한다.
+        - 생성자 : __init__ 매개변수를 전달받아 변수를 생성한다
+        class Person:    
+            national = 'korea'
+            language = 'korean'
+            tools = []
+    
+            def __init__(self, name, age):  #성장자 __init__과 메서드 self를 사용 
+                self.name = name
+                self.age = age
+    
+            def greeting(self): # self를 사용하여 접근 
+                 return '안녕하세요'
+    
+            def information(self):
+                return "I'm from " + self.national + " and I use " + self.language + ". My name is " + self.name + ". I'm " + str(self.age)
+    
+            def favorite(self, color):
+                return "I love " + color
+
+            def add_tool (self, tool):
+                __class__.tools.append(tool)     #tools 이라는 list에 tool 추가하는 방법
+
+        junho = Person("준호", 23) #class를 사용 하여 national = korea, language = korean, name = 준호, age = 23 이라는 객체를 만듬
+
+        - 상속
+        class Student(Person):
+
+            def __init__(self, name, age, hobby):
+                # 1. 부모클래스명.__intit__(self, ...)
+                # Person.__init__(self, name)
+        
+                # 2. super().__init__(...)
+                # Person.__init__(self, name, phone)
+
+                self.hobby = hobby
+
+        juno = Student("주노", 23, "야구보기) #Person을 상속받은 Student class를 사용 하여 national = korea, language = korean, name = 준호, age = 23, hobby =  야구보기 라는 객체를 만듬
+
+    - global, local
+        - global - 전역변수, local - 로컬변수
+            전역변수는 어디서든 사용 가능 로컬변수는 함수나 클래스 안에서만 사용가능하다.
