@@ -162,3 +162,11 @@
     - global, local
         - global - 전역변수, local - 로컬변수
             전역변수는 어디서든 사용 가능 로컬변수는 함수나 클래스 안에서만 사용가능하다.
+
+---
+
+- 2월 14일 금요일 - python의 모듈&패키지 (python-basic-07번)
+    - 모듈 
+        import 모듈
+        improt 모듈 as 별칭  # 모듈 이름이 길면 별칭을 사용하면 좋음 (ex)import numpy as np)
+        
