@@ -182,17 +182,18 @@
     - 파일 close
         f.close()
         파일은 꼭 닫아 주는것이 좋다(쓰기 모드로 열었다가 닫지 않으면 오류가 생길 수 있다.)
-    - 파일 쓰기
+    - 파일 쓰기 # 없는 파일을 열면 새로 만듬
         f.write(내용) #덮어 씌어짐
         f.close()
         data = [내용]
         f.writelines(data)
-    - 파일 읽기
+    - 파일 읽기 # 없는 파일을 열면 에러 뜬다.
         data = f.read()
         print(data)
         line = f.readline() # 원하는줄 열기 
         print(line)
     - 파일 수정
+        f.write(내용)
     - with open 구문
         with open("newFile2.txt", "w") as f:
             f.write("Life is too short, you need python")  #clsoe를 내가 하지 않아도 돼서 유용하다.하지만 파일을 열어서 유지할때 사용할떄는 불편하다
@@ -208,4 +209,34 @@
          오류가 발생하지 않으면 실행
        finally:
           오류가 발생하든 안하든 무조건 실행
-    - 예외 처리를 함으로써 에러를 처리하고 다음으로 이거 갈 수 있다. 예외 처리를 하지 않으면 거기서 멈추기 때문에 예외처리는 다음으로 넘어가는데 중요하다. 
+        예외 처리를 함으로써 에러를 처리하고 다음으로 이거 갈 수 있다. 예외 처리를 하지 않으면 거기서 멈추기 때문에 예외처리는 다음으로 넘어가는데 중요하다. 
+    
+---
+
+- 2울 17일 월요일 - python의 streamlit
+    - streamlit 
+        오프소스로 python에서 사이트를 개발 할때 매우 유요하게 사용할 수 있다.
+        pip install stremalit #streamlit 다운로드
+        import streamlit as st 
+        python -m steamlit run 파일명.py
+    - session_state
+        로컬스토리지 같은 역할 
+    - 네비게이션 페이지
+        |__page
+        |______main.py
+        |______pages
+               |_____1.py
+               |_____2.py
+        이런구조가 있으면 python -m steamlit run main.py 를 재생 시키면 왼쪽 네비게이션에 main,1,2 이렇게 3개의 페이지가 뜬다.
+    - 페이지 내 섹션 나누기 
+        col1, col2 = st.columns(2) # 왼쪽에는 내용1이 오른쪽에는 내용2가 뜨도록 화면이 나누어 진다.
+        with col1:
+            내용1
+        with col2:
+            내용2
+
+--- 
+
+python the end
+
+
