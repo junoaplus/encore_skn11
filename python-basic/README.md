@@ -174,4 +174,38 @@
         모듈.py 라는 파일을 만들고 다른 파일에서 모듈.py에 있는 것들을 불러와서 쓰고 샆을 때
         import 경로.모듈
 
+---
 
+- 2월 17일 월요일 -python의 파일 I/O
+    - 파일 open
+        f = open('경로와 파일이름', '파일 열기 모드 설정(r : 읽기, w : 쓰기, a : 수정)')
+    - 파일 close
+        f.close()
+        파일은 꼭 닫아 주는것이 좋다(쓰기 모드로 열었다가 닫지 않으면 오류가 생길 수 있다.)
+    - 파일 쓰기
+        f.write(내용) #덮어 씌어짐
+        f.close()
+        data = [내용]
+        f.writelines(data)
+    - 파일 읽기
+        data = f.read()
+        print(data)
+        line = f.readline() # 원하는줄 열기 
+        print(line)
+    - 파일 수정
+    - with open 구문
+        with open("newFile2.txt", "w") as f:
+            f.write("Life is too short, you need python")  #clsoe를 내가 하지 않아도 돼서 유용하다.하지만 파일을 열어서 유지할때 사용할떄는 불편하다
+
+---
+
+- 2월 17일 월요일 - python의 예외 처리
+    - try:
+        내용
+      excepr 에러:
+        처리할 방법 #try는 하나만 쓸 수 있지만 하나의 try에 대해서 여러개의 except를 쓸 수 있다. 
+       else: 
+         오류가 발생하지 않으면 실행
+       finally:
+          오류가 발생하든 안하든 무조건 실행
+    - 예외 처리를 함으로써 에러를 처리하고 다음으로 이거 갈 수 있다. 예외 처리를 하지 않으면 거기서 멈추기 때문에 예외처리는 다음으로 넘어가는데 중요하다. 
