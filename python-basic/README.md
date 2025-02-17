@@ -169,4 +169,9 @@
     - 모듈 
         import 모듈
         improt 모듈 as 별칭  # 모듈 이름이 길면 별칭을 사용하면 좋음 (ex)import numpy as np)
-        
+        form 모률 import 쓰고싶은 함수나 변수
+    - 내장모듈
+        모듈.py 라는 파일을 만들고 다른 파일에서 모듈.py에 있는 것들을 불러와서 쓰고 샆을 때
+        import 경로.모듈
+
+
