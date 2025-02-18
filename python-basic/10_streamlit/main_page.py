@@ -9,3 +9,4 @@ st.write(my_site)
 
 if st.button(f'{my_site} 접속하기'):
     st.success(f'{my_site}로 접속중🚀', icon='✅')
+    
