@@ -6,3 +6,4 @@
 각 부분의 README 부분의 강의 내용을 정리 해두었습니다. 
 
 python - python-basic
+DataBase - DB
