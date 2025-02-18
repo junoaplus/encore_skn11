@@ -42,3 +42,5 @@
 | SQLite     | D.Richard Hipp (오픈소스) | 유닉스, 모바일 OS (안드로이드, iOS 등) | 모바일 전용 데이터베이스 |
 
 
+        -  DBMS 동작 원리 
+![alt text](image.png)
