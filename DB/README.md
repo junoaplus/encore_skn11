@@ -270,8 +270,11 @@ DBMS 변천사
             ![alt text](image-19.png)
             - 이행적 함수적 종속 제거, 키가 아닌 모든 속성이 기본키에 직접 종속
         - BCMF
+            ![alt text](image-20.png)
             - 후보키가 아닌 결정자 제거
         - 4정규형
+            ![alt text](image-21.png)
             - 다치종속 제거
          - 5정규형 
+            ![alt text](image-22.png)
             - 종인 종속석 이용
