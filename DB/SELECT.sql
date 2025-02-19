@@ -1,38 +1,19 @@
-# ORDER BY
+# SELECT FROM 
 
--- 오름차순 정렬(ASC 명시하지 않아도 기본 오름차순 정렬)
-SELECT menu_code, menu_name, menu_price
-	FROM tbl_menu
-ORDER BY menu_name ASC;
+-- 단일 컬럼 조회
+SELECT menu_name FROM tbl_menu;
 
--- 내림차순 정렬(DESC를 명시적으로 작성해야 내림차순 정렬됨)
-SELECT menu_code, menu_name, menu_price
-	FROM tbl_menu
-ORDER BY menu_name DESC;
+-- 다중 컬럼 조회
+SELECT menu_code, menu_name, menu_price, category_code, orderable_status FROM tbl_menu;
 
--- 다중 조건 정렬 가능
-SELECT menu_code, menu_name, menu_price
-	FROM tbl_menu
-ORDER BY menu_price, menu_name;
+-- 전체 컬럼 조회
+SELECT * FROM tbl_menu;
 
--- 컬럼의 연산 결과로 정렬 가능
-SELECT menu_code, menu_name, menu_price, menu_code * menu_price
-	FROM tbl_menu
-ORDER BY menu_code * menu_price;
+-- 연산 사용 가능
+SELECT 12 + 17; #29
+SELECT 12 - 17; #-5
+SELECT 12 * 17; #204
+SELECT 12 / 17; #0.7059
+SELECT 12 % 17; #12
 
--- 별칭을 사용한 정렬, 백팁으로 바꿔줘야 됨
-SELECT menu_code, menu_name, menu_price, menu_code * menu_price as `연산결과`
-	FROM tbl_menu
-ORDER BY `연산결과`;
 
--- 오름차순(ASC) 정렬 시 NULL이 맨처음 (default)
--- IS NULL을 붙이면 오름차순(ASC) 정렬 시 NULL을 맨끝으로 (IS NULL ASC) : ASC 생략 가
-SELECT category_code, category_name, ref_category_code
-	FROM tbl_category
-ORDER BY ref_category_code IS NULL;
-
--- 내림차순(DESC) 정렬 시 NULL이 맨끝 (default)
--- IS NULL을 붙이면 내림차순(DESC) 정렬시 NULL을 맨처음응로 (IS NULL DESC) : DESC 생략 불가
-SELECT category_code, category_name, ref_category_code
-	FROM tbl_category
-ORDER BY ref_category_code IS NULL DESC, ref_category_code DESC;
