@@ -328,3 +328,122 @@ DBMS 변천사
                 ![alt text](image-28.png)
                 - 조인연산에 걸리는 시간을 단축시켜준다, 이상현상이 발생 할 수 있다.
 
+---
+
+- 2월 19일 수요일 - 데이터베이스 DDL
+    - CREATE
+        CREATE TABLE IF NOT EXISTS tb1 (
+            pk INT PRIMARY KEY,
+            fk INT,
+            col1 VARCHAR(255),
+            CHECK(col1 IN ('Y', 'N'))
+        ) ENGINE=INNODB;
+        - tb1이라는 이름으로 테이블 만들기
+    - drop
+        - 삭제후 재생성, 테이블안을 초기화 해주는 것
+    - TRUNCATE
+        - 절대 쓰지 말기 , 진짜 그냥 데이터가 완전 아예 날아감
+
+---
+
+- 2월 19일 수요일 - 데이터베이스 constraints
+    - NOT NULL
+        - NULL 값을 허용하지 않는다
+    - UNIQUE
+        - 중복을 허용하지 않는다.
+        - PK를 설명하기 위해서 
+        - 사용법 : phone VARCHAR(255) NOT NULL UNIQUE OR UNIQUE (phone)
+    - PRIMARY KEY
+        - NOT  NULL +  UNIQUE 하다.
+        - 테이블에서 식별자 역할을 한다. 
+        - 한 테이블당 한 개만 설정할 수 있음
+        - 사용법 :  user_no INT PRIMARY KEY OR PRIMARY KEY (user_no)
+    - FOREIGN KEY
+        - 참조된 다른 테이블에서 제공하는 값만 사용할 수 있음
+        - 시용법 : FOREIGN KEY (grade_code) REFERENCES user_grade (grade_code)
+    - CHECK
+        - 제약조건을 확인하고 그에 맞는지 확인 하는 것
+        - 사용법 : gender VARCHAR(3) CHECK (gender IN ('남','여')), age INT CHECK (age >= 19)
+    - DEFAULT 
+        - 기본적으로 들어갈 값
+        - 사용법 : add_time DATETIME DEFAULT (current_time)
+    
+---
+
+- 2월 18일 수요일 - 데이터베이스 INDEX, VIEW
+    - INDEX
+         - 데이터를 빠르게 조회 할 수 있도록 도와줌
+         - 인덱스도 저장공간을 차지하고 수정할때 인덱스도 수정을 해줘야 돼서 신중하게 결정을 해야된다.
+    - VIEW
+        - 가상의테이블, 물리적 저장하지 않고 쿼리만 저장
+        - VIE를 통한 DML
+            - 아래의 3개가 불가능 한 경우도 있다. 
+        - VIE를 통한 INSERT
+            - NULL을 넣으면 에러가 뜬다
+        - VIEW를 통한 UPDATE
+        - VIEW를 통한 DELETE
+    
+--- 
+
+- 2월 18일 수요일 - 데이터베이스 STORED PROCEDURE, TRIGER
+    - 미리 컴파일되어 데이터베이스에 저장된 SQL문의 집합
+    
+    | 장점 | 단점 |
+    | --- | --- |
+    | 복접한 SQL을 만들어 여러곳에서 재사용 가능 | 오류 발생시 추적이 어려워 디버깅이 어렵다 |
+    | 미리 컴파일되어 저장되어 실행 속도가 빠르다 | DBMS로의 이식이 어렵다 |
+    | 엑세스 로직을 캡술화하여 보안을 높일 수 있다 | 로직이 과해지면 유지보수가 어려워진다 |
+    | 네트워크 트랙픽을 감소시키다 |  |
+
+    - 생성방법
+
+        -- 기존 DELIMITER 변경
+        DELIMITER $$
+
+        -- 기존에 존재한다면 삭제
+        DROP PROCEDURE IF EXISTS get_menu_list$$
+
+        -- Stored Procedure 생성
+        CREATE PROCEDURE get_menu_list()
+        BEGIN
+            SELECT * FROM tbl_menu;
+        END$$
+
+        -- DELIMITER 원래대로 복구
+        DELIMITER ;
+
+        -- 생성된 Stored Procedure 호출
+        CALL get_menu_list();
+
+    - IN,OUT
+        - IN
+            - 호출 시 값을 전달받아 프로시저 내에서 사용
+        - OUT
+            - 실행 후 값을 반환한다
+        - INOUT
+            - 값을 전달바고, 반환한다.
+    - TRIGER
+        -  특정 데이터 변경 이벤트가 발생할 때 자동으로 실행되는 저장된 프로시저의 한 종류
+
+--- 
+
+- 2월 19일 수요일 - 데이터베이스 백업 및 복원
+    - 백업
+        - 논리적 백업
+            - 데이터베이스 구조와 데이터를 SQL 문자으로 덤프하여 저장하는 방법
+            - 이식성이 높고 특정 데이터 백업 가능하지만, 대용량의 경우 시간이 오래 걸린다
+            - mysqldump 유틸리티 사용
+        - 물리적 백업
+            - 데이터 파일 자체를 복사하여 백업하는 방법
+            - 속도가 빨라 대용량에 좋지만, 동일한 OS와 파일 시스템 환경이 필요하다는 제한점이 있다.
+            - mysqlhotcopy , 파일 시스텀 보가 등을 사용
+--
+
+- 2월 20일 목요일 - SQL문
+    - sql 파일로 정리 해둠
+    - 순서
+        1. SELECT (DISTINCT)
+        2. FROM
+        3. WHERE
+        4. ORDER BY
+        5. LIMIT
