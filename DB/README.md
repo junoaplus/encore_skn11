@@ -44,15 +44,15 @@
 
 DBMS 동작 원리 
 
-![alt text](image.png)
+![alt text](이미지/image.png)
 
 DBMS 변천사 
 
-![alt text](image-1.png)
+![alt text](이미지/image-1.png)
 
 관계 데이터 모델이 가장 오래 사용, 우리도 관계 데이터 모델로 학습한다.
 
-![alt text](image-2.png)
+![alt text](이미지/image-2.png)
 
 - 계층형 데이터베이스 
     - 트리 형태를 가지고 부모-자식으로 내려오는 구조 
@@ -61,7 +61,7 @@ DBMS 변천사
     - 계층형보다 복잡한 구조에 용이 
     - 구조가 복잡해서 이해하기 어렵다 
 
-![alt text](image-3.png)
+![alt text](이미지/image-3.png)
 
 - 관계형 데이터베이스 
     - 데이터를 테이블 형태로 저장한다.(행과 열) 
@@ -95,7 +95,7 @@ DBMS 변천사
     
     - MySQL동작원리 
     
-    ![alt text](image-4.png)
+    ![alt text](이미지/image-4.png)
 
     1. 클라이언트 / 서버통신
         - MySQL 서버로 전송한다 
@@ -126,7 +126,7 @@ DBMS 변천사
             - 데이블 별로 기준을 만들고 어떠한 관계 어떠한 의미를 가지고 있는지 연관관계를 가지고 설계를 한다 
     - 개발 절차에 따른 정보 시스템 구축 절차
 
-        ![alt text](image-6.png)
+        ![alt text](이미지/image-6.png)
 
         - 폭포수 모델 방식의 소프트워어 개발 절차는 요구사항 분석, 설계, 구현, 테스트, 튜닝, 유지보수 이다. 
         - 데이터 관점 모델링
@@ -134,14 +134,14 @@ DBMS 변천사
     - 데이터 모델 표기법 
         - Barker 표기법 VS IE 표기법
 
-            ![alt text](image-7.png)
+            ![alt text](이미지/image-7.png)
             
             - 선과, 끝부분의 바를 잘보자
                 - 실선(필요) 둘다 무조건 매칭, 점선(참조) 매칭이 안돼도 상관 없다
             - 범용은 IE 표기법 
             - 우리는 Barker 표기법을 사용 할 것이다.
     - 관계형 모델(Relational Model)
-        - ![alt text](image-8.png)
+        - ![alt text](이미지/image-8.png)
              - 릴레이션 이름 = 테이블 명 
              - 식별자 = PK
              - 어트리뷰트 값 = 식별자 값을 제외 한 값
@@ -177,7 +177,7 @@ DBMS 변천사
         - 행위 엔터티
         - 가공 엔터티
     - 속성
-        ![alt text](image-9.png)
+        ![alt text](이미지/image-9.png)
         - 단일 속성
             - 하나의 의미로 구성 된 속성
             - ex) 부서명, 상품명
@@ -196,7 +196,7 @@ DBMS 변천사
             - ex) 상품의 총 금액
     - 식별자 
         - 주식별자
-            ![alt text](image-10.png)
+            ![alt text](이미지/image-10.png)
             - 유일성
             - 최소성
             - 불변성
@@ -214,14 +214,14 @@ DBMS 변천사
         - 관계 디그리
     - 특별한 관계
         - 일대일 관계 
-            ![alt text](image-11.png)
+            ![alt text](이미지/image-11.png)
             - 필요한 상황이 아니라면 일대일 관계를 만들지 않는다
             - Join 할 때 시간 낭비 
         - 베타 관계 
-            ![alt text](image-12.png)
+            ![alt text](이미지/image-12.png)
             - 프로젝트에서 할 일은 거의 없다 
         - 재귀 관계 
-            ![alt text](image-13.png)
+            ![alt text](이미지/image-13.png)
             - 레벨이 존재하지 않는 데이터에서 사용 
             - ex) 나 사원 사수 사원 
 
@@ -229,7 +229,7 @@ DBMS 변천사
  
  - 2울 18일 화요일 - 데이터베이스 모델링 3
     - 개념 모델
-        ![alt text](image-14.png)
+        ![alt text](이미지/image-14.png)
         - 요구을 이해하는 관계자들이 이해할 수 있도록 데이터로 간결하게 표현하는 것
         - 충분한 의사소통이 필요하다
 
@@ -254,36 +254,36 @@ DBMS 변천사
         - 중복데이터 제거
         - 안정성
         - 확장성
-        ![alt text](image-15.png)
+        ![alt text](이미지/image-15.png)
         - 1정규형 (반복 속성 제거)
             - 다가 속성 관련
-            ![alt text](image-16.png)
+            ![alt text](이미지/image-16.png)
             - 반복 속성 제거
             - 다가속성이 제일 먼저 제거 됨(모든 속성은 반드시 하나의 값을 가져야 한다.)
             - 원자값을 가짐
             - 복합 속성 관련
-            ![alt text](image-17.png)
+            ![alt text](이미지/image-17.png)
         - 2정규형 
-            ![alt text](image-18.png)
+            ![alt text](이미지/image-18.png)
             - 부분 함수적 종속 제거, 기본키 그룹에 완전하게 함수적 종속 
         - 3정규형
-            ![alt text](image-19.png)
+            ![alt text](이미지/image-19.png)
             - 이행적 함수적 종속 제거, 키가 아닌 모든 속성이 기본키에 직접 종속
         - BCMF
-            ![alt text](image-20.png)
+            ![alt text](이미지/image-20.png)
             - 후보키가 아닌 결정자 제거
         - 4정규형
-            ![alt text](image-21.png)
+            ![alt text](이미지/image-21.png)
             - 다치종속 제거
          - 5정규형 
-            ![alt text](image-22.png)
+            ![alt text](이미지/image-22.png)
             - 종인 종속석 이용
 
 ---
 
 - 2월 19일 수요일 - 데터베이스 모델링 4
     - 물리모델
-        ![alt text](image-23.png)
+        ![alt text](이미지/image-23.png)
         - 물리모델의 목적
             - 성능을 최적화 하기 위해 성능을 거려하여 엔터티를 합치거나 모델 구조를 약간 변경 할 수 있다.
         - 주의 사항
@@ -292,7 +292,7 @@ DBMS 변천사
             - 슈퍼타입과 서브관계의 물리적 변화을 한다.
     - 슈퍼타입과 서브타입
         - 슈퍼타입, 서브타입
-            ![alt text](image-24.png)
+            ![alt text](이미지/image-24.png)
             - 노란 부분이 서브타입, 다른 부분이 슈퍼타입이다.
         - 서브타입의 물리모델 변환
             - 통합 엔터티로 변환
@@ -316,16 +316,16 @@ DBMS 변천사
         - 비정규화
             - 성능향상, 개발 과정의 편의성, 운영 단수화를 위해 중복을 감수하고 성능을 향상시키기 위해 한다.
             - 수직 분할
-                ![alt text](image-25.png)
+                ![alt text](이미지/image-25.png)
                 - 카디널리티는 1:1, 데이터량을 줄여 검색 속도 업
             - 수평 분할
-                ![alt text](image-26.png)
+                ![alt text](이미지/image-26.png)
                 - 검색빈도에 따라 나눔
             - 속성 중복
-                ![alt text](image-27.png)
+                ![alt text](이미지/image-27.png)
                 - 데이터 무결성이 깨질 수 있고, 입력,수정,삭제에 있어 응답이 늦어질 수 있다.
             - 엔터티 통합
-                ![alt text](image-28.png)
+                ![alt text](이미지/image-28.png)
                 - 조인연산에 걸리는 시간을 단축시켜준다, 이상현상이 발생 할 수 있다.
 
 ---
@@ -442,8 +442,11 @@ DBMS 변천사
 - 2월 20일 목요일 - SQL문
     - sql 파일로 정리 해둠
     - 순서
-        1. SELECT (DISTINCT)
-        2. FROM
-        3. WHERE
-        4. ORDER BY
-        5. LIMIT
+        - SELECT (DISTINCT) -3
+        - FROM -1
+        -  WHERE -2 
+        - GROUP BY -4
+        - HAVING -5
+        - WITH ROLLUP  -6
+        - ORDER BY -7
+        - LIMIT -8
