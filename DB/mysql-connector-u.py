@@ -19,6 +19,8 @@ value = ('쌀국수', 15000)
 cursor.execute(sql,value)
 
 connection.commit()
- 
+
+print(f'{cursor.rowcount}개의 행이 업데이트 되었습니다.')
+
 cursor.close()   
 connection.close()

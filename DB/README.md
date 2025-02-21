@@ -450,3 +450,142 @@ DBMS 변천사
         - WITH ROLLUP  -6
         - ORDER BY -7
         - LIMIT -8
+
+---
+ 
+- 2월 20일 목요일 - 데이터베이스의 DML
+    - DML 
+        - 데이터 조작언어, 테이블에 값을 삽입,수정,삭제하는 SQL
+    - INSERT
+            -- INSERT INTO 테이블명 VALUES (컬럼순으로, 삽입할, 데이터, 나열, ....)
+            INSERT INTO tbl_menu  VALUES (null, '곰탕', 9500, 6, 'Y');
+
+            -- INSERT INTO 테이블명 (컬럼명1, 컬럼명2, 컬럼명3, ...)
+            -- VALEUS (데이터1, 데이터2, 데이터3, ...)
+            INSERT INTO tbl_menu(menu_code, menu_name, menu_price, orderable_status, category_code)
+            VALUES (null, '차돌짬뽕', 15000, 'Y', 6);
+
+
+            INSERT INTO tbl_menu(menu_name, menu_price, category_code, orderable_status)
+            VALUES('만잔라떼', 4500, 7, 'Y');
+
+            -- MULTI INSERT
+            INSERT INTO tbl_menu
+            VALUES
+            (null, '유자민트티', 6900, 7, 'Y'),
+            (null, '프렌치프라이', 7500, 7, 'Y'),
+            (null, '훈제오리셀러드', 9500, 7, 'Y');
+
+            -- AUTO INSERT의 단점, 100점으로 넣으면 그앞에 많은 수가 비어 있어도 다음에 넣는 것은 101로 들어감
+            -- INSERT INTO tbl_menu VALUES (100, '1번 음식', 100, 10, 'Y');
+    - UPDATE
+        -- UPDATE 테이블명 
+        -- 	SET 컬럼명1 = 수정할 데이터,
+        -- 		컬럼명2 = 수정할 데이터,
+        -- 		...
+        -- [ WHERE 수정 대상 데이터 조건 ];
+
+        UPDATE tbl_menu
+            SET menu_name = '100번이였던 음식',
+                menu_price = 19000
+        WHERE menu_code = 100; -- SET UPDATE MODE가 설정되어 있으면 WHERE절 없이 수정 불가 
+    - DELECT
+        -- DELETE FROM 테이블명 [ WHERE 삭제 조건];
+
+        DELETE 
+            FROM tbl_menu
+            WHERE menu_code = 101;
+            
+        DELETE 
+            FROM tbl_menu
+        ORDER BY menu_code DESC
+        LIMIT 3;
+
+        DELETE
+            FROM tbl_menu
+        WHERE menu_code = 26;
+    - REPLACE
+        -- DELETE FROM 테이블명 [ WHERE 삭제 조건];
+
+        DELETE 
+            FROM tbl_menu
+            WHERE menu_code = 101;
+            
+        DELETE 
+            FROM tbl_menu
+        ORDER BY menu_code DESC
+        LIMIT 3;
+
+        DELETE
+            FROM tbl_menu
+        WHERE menu_code = 26;
+
+---
+
+- 2월 20일 목요일 - 데이터베이스 JOIN
+    - 별칭
+        SELECT
+            a.category_code,
+            a.menu_name
+        FROM
+            -- tbl_menu AS a
+            tbl_menu a          #a.이름 으로 별칭을 설정해준다.
+        ORDER BY 
+            a.category_code,
+            a.menu_name;
+        - 별칭은 지정을 해줘야됨 다른테이블에 같은 이름의 컬럼이 있을 수 있기 때문에 별칭 지정을 통해서 알 수 있도록 해준다.
+    - JOIN 
+        - INNER JOIN 
+            SELECT 
+                a.menu_name,
+                b.category_name
+            FROM 
+                tbl_menu a
+            -- INNER JOIN tbl_category b ON a.category_code = b.category_code;
+            JOIN tbl_category b ON a.category_code = b.category_code;           # 연결해줄 커럼을 연결(PK와 FK연결)해서 JOIN해라
+        - OUTER JOIN
+            - LEFT JOIN
+                SELECT 
+                    a.category_name,
+                    b.menu_name
+                FROM 
+                    tbl_category a
+                LEFT JOIN tbl_menu b ON a.category_code = b.category_code; # a.tbl_category를 기준으로 표를 만듬
+            - RIGHT JOIN
+                SELECT 
+                    a.menu_name,
+                    b.category_name
+                FROM 
+                    tbl_menu a
+                RIGHT JOIN tbl_category b ON a.category_code = b.category_code; # b.tbl_category를 기준으로 표를 만듬
+        - CROSS JOIN
+        - SELF JOIN
+
+---
+
+- 2뤌 20일 목요일 - 데이터베이스, python 연결
+    # pip  install mysql-connector-python 
+
+    import mysql.connector
+
+    connection = mysql.connector.connect(
+        host = 'localhost',
+        user = 'ohgiraffers',
+        password = 'ohgiraffers',
+        database = 'menudb'   
+    )
+
+
+    cursor = connection.cursor()  
+
+    sql = "UPDATE tbl_menu SET menu_name = %s , menu_price = %s WHERE menu_code = 1"      # 쿼리문을 작성 하면 된다.
+    value = ('쌀국수', 15000)                                                               # 이렇게 보내야 한전한 방법.
+
+    cursor.execute(sql,value)
+
+    connection.commit()     # commit을 꼭 해줘야 내용이 반영 된다.
+
+    print(f'{cursor.rowcount}개의 행이 업데이트 되었습니다.')
+
+    cursor.close()   
+    connection.close()
