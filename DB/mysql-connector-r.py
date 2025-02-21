@@ -15,7 +15,7 @@ cursor.execute("SELECT menu_code, menu_name, menu_price FROM tbl_menu")
 result = cursor.fetchall()
 
 # print(result)
-for row in result:
+for row in result: # row = 한 행의 결과
     print('menucode:', row[0], "/", 'menucode:', row[1], '/', 'menuprice:', row[2])
     
     
