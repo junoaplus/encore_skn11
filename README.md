@@ -5,5 +5,11 @@
 ---
 각 부분의 README 부분의 강의 내용을 정리 해두었습니다. 
 
-python - python-basic
-DataBase - DB
+python - 01_python-basic
+
+DataBase - 02_DB
+
+web_crawling - 03_web_crawling
+
+데이터 분석 - 04_data-analysis
+
