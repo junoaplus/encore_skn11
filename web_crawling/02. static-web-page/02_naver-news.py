@@ -40,9 +40,9 @@ for i, news_content in enumerate(news_contents) :
     img_lazysrc = img_tag['data-lazysrc']
     if img_lazysrc.startswith("http"):
         img_dir = "/Users/hwangjunho/Desktop/encore_skn11/web_crawling/02. static-web-page/images"
-        today = datetime.now().strftime('%y%m%d')
-        filename = f'{img_dir}/{today}_{i}.jpg'
-        urlretrieve(img_lazysrc, filename)
+        today = datetime.now().strftime('%y%m%d')   # 파일명 생성을 위한 오늘 날짜
+        filename = f'{img_dir}/{today}_{i}.jpg'     # 파일명 (저장할 파일 확장자까지)
+        urlretrieve(img_lazysrc, filename)          # 파일 저장
         
     news_entry = NewsEntry(title, href, filename)
     news_list.append(news_entry)
