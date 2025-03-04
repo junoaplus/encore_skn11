@@ -27,6 +27,10 @@
         - np.array
     - 브로드캐스팅 
         - 작은 배열을 큰 배열에 맞춘다
+    - slicing
+        - 차원 유지
+    - index 접근
+        - 차원 제거
 
 ---
 
@@ -38,3 +42,15 @@
     - 정렬
         - np.sort
         - np.argsort
+
+---
+
+- 3월 4일 화요일 - 데이터 분석 - pandas
+    - iloc
+        - .iloc[ 시작 : 끝-1 ]
+        - iloc는 끝-1로 출력 된다.
+    - loc
+        - loc[ 시작라벨 : 끝라벨]
+        - loc는 마지막에 적은 라벨도 출력 된다. 
+    - slicing
+        - 다처원에서 [:] 행열 모두 슬라이싱을 하면 Series, 하나만 슬라이싱 하면 DataFrame
