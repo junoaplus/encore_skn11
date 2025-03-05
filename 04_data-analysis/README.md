@@ -54,3 +54,12 @@
         - loc는 마지막에 적은 라벨도 출력 된다. 
     - slicing
         - 다처원에서 [:] 행열 모두 슬라이싱을 하면 Series, 하나만 슬라이싱 하면 DataFrame
+    - inplace = True
+        - df.drop('BMI type', axis=1, inplace=True)
+        - 이렇게 사용하면 다시 df에 재정의 해주거나 다른 곳에 저장 하지 않고 바로 df에 저장 된다.
+    - 역순 정령 
+        - df.sort_values('Net worth', ascending=False)
+        - ascending=False
+        - 여러개를 줄 때
+            - []로 묶어서 전달
+            - df.sort_values(['Net Worth','Years with Bank'], ascending=[False, False])
