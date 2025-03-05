@@ -63,3 +63,16 @@
         - 여러개를 줄 때
             - []로 묶어서 전달
             - df.sort_values(['Net Worth','Years with Bank'], ascending=[False, False])
+
+---
+
+- 3월 5일 수요일 - 데이터 분석 - pandas
+    - pivot
+        - df.pivot_table(
+                index='날짜',
+                columns='상품',
+                values='판매량',
+                fill_value=0,   # 결측치 대체값
+                aggfunc='sum',   # 지정 하지 않으면 평균으로 가져 옴
+                margins=True
+            )
