@@ -76,3 +76,14 @@
                 aggfunc='sum',   # 지정 하지 않으면 평균으로 가져 옴
                 margins=True
             )
+
+---
+
+- 3월 4일 수요일 - 데이터 분석 - matplotlib
+    - matplotlib
+        1. histogram : 연속형값의 도수(빈도수/개수) 파악
+        2. bar plot : 범주형값의 개수, 또는 다른 연속값을 파악
+        3. scatter plot : 산포도(산점도) 두 연속값들의 분표 파악
+        4. line plot : 시계열데이터(연속값) 변화 파악
+        5. box plot : 연속형 값의 사분위, 이상치 파악
+        6. pie chart : 전체 범위 중의 비율
