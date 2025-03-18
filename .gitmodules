@@ -4,3 +4,6 @@
 [submodule "EDA-1Team"]
 	path = EDA-1Team
 	url = https://github.com/encore-SKN11/EDA-1Team.git
+[submodule "ML-1Team"]
+	path = ML-1Team
+	url = https://github.com/encore-SKN11/ML-1Team.git
