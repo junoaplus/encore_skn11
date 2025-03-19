@@ -1,9 +1,0 @@
-[submodule "SKN011-1st-6Team"]
-	path = SKN011-1st-6Team
-	url = https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN011-1st-6Team.git
-[submodule "EDA-1Team"]
-	path = EDA-1Team
-	url = https://github.com/encore-SKN11/EDA-1Team.git
-[submodule "ML-1Team"]
-	path = ML-1Team
-	url = https://github.com/encore-SKN11/ML-1Team.git
