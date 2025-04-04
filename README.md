@@ -16,3 +16,5 @@ web_crawling - 03_web_crawling
 머신러닝 - 05_Mechine-Learnin
 
 딥러닝 - 06_Deep-Learning
+
+자연어처리 - 07_nlp
