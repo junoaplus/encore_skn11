@@ -2,3 +2,6 @@
 07_nlp/02_preprocessong/data
 06_Deep_Learning/01_DL-BASIC/data
 07_nlp/07_seq2seq/data
+08_LLM/03_vector_db/chroma_db
+08_LLM/03_vector_db/chromadb
+08_LLM/03_vector_db/data

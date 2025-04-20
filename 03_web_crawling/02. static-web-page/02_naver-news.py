@@ -27,12 +27,12 @@ bs = BeautifulSoup(html, 'html.parser')
 
 # 4. li.bx 반복순회 > .news_content > 두 번쨰 a 태그
 news_contents = bs.select('div.news_contents')
-# print(len(news_contents))
+print(len(news_contents))
 
 # 5. herf속성: 링크, text: 뉴스 제목
 news_list = []
 for i, news_content in enumerate(news_contents) :
-    a_tag = news_content.select_one('a.news_tit')
+    a_tag = news_content.select_one('a.bynlPWBHumGsbotLYK9A.jT1DuARpwIlNAFMacxlu')
     title = a_tag.text
     href = a_tag['href']
     
@@ -49,4 +49,4 @@ for i, news_content in enumerate(news_contents) :
     
 # 경과 출력
 for news in news_list:
-    print(news)
+    print(news['text'])
