@@ -5,3 +5,10 @@
 08_LLM/03_vector_db/chroma_db
 08_LLM/03_vector_db/chromadb
 08_LLM/03_vector_db/data
+08_LLM/04_langchain/.env
+08_LLM/04_langchain/data
+08_LLM/05_rag/data
+08_LLM/05_rag/chroma_db
+08_LLM/06_cot/.env
+08_LLM/05_rag/.env
+Project/skn11_BaseBall_Game/llm/.env
