@@ -13,3 +13,6 @@
 [submodule "project/skn11_BaseBall_Game"]
 	path = project/skn11_BaseBall_Game
 	url = https://github.com/junoaplus/skn11_BaseBall_Game.git
+[submodule "Team_Project/SKN11-3rd-3Team"]
+	path = Team_Project/SKN11-3rd-3Team
+	url = https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN11-3rd-3Team.git

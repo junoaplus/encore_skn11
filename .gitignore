@@ -12,3 +12,13 @@
 08_LLM/06_cot/.env
 08_LLM/05_rag/.env
 Project/skn11_BaseBall_Game/llm/.env
+08_LLM/08_multi_model/09_vision/video.mp4
+08_LLM/08_multi_model/09_vision/dog.jpg
+08_LLM/07_fine_tuning/korean_poetry_dataset.json
+08_LLM/07_fine_tuning/rlhf_evaluation_data.json
+08_LLM/08_multi_model/05_generate_image/openskyml/generated_img
+08_LLM/08_multi_model/05_generate_image/openskyml/image.png
+08_LLM/08_multi_model/09_vision/VOCdevkit
+08_LLM/08_multi_model/09_vision/Night_Day_Chase.mp4
+08_LLM/08_multi_model/image
+08_LLM/07_fine_tuning/korean_poetry_dataset.json
