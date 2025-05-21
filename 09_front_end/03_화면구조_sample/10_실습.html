@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>전체 통합 연습</title>
+    <style>
+        div {
+            border: 1px solid rgb(255, 255, 255);
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+
+        #wrapper>div {
+            width: 100%;
+        }
+
+        #header {
+            height: 20%;
+        }
+
+        #navigator {
+            height: 5%;
+        }
+
+        #content {
+            height: 55%;
+        }
+
+        #footer {
+            height: 20%;
+        }
+
+        #header > div, #content > div {
+            height: 100%;
+            float: left;
+        }
+
+        #header-1 {
+            width: 20%;
+            position: relative;
+        }
+
+        /* 로고 이미지 스타일 추가 */
+        #home-logo {
+            position: absolute;
+            margin: auto;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+
+        #header-2 {
+            width: 65%;
+            position: relative;
+        }
+
+        #header-3 {
+            width: 15%;
+        }
+
+        #content-1 {
+            width: 15%;
+        }
+
+        #left-logo {
+            width: 100%;        
+            height: 100%;       
+            object-fit: cover;  
+        }
+
+        #main-logo {
+            width: 100%;        
+            height: 100%;       
+            object-fit: cover;  
+        }
+
+        #content-2 {
+            width: 60%;
+        }
+
+        #content-3 {
+            width: 25%;
+        }
+
+
+        /* footer 스타일 추가 */
+        #footer-1, #footer-2 {
+            width: 100%;
+        }
+
+        #footer-1 {
+            height: 20%;
+        }
+
+        #footer-2 {
+            height: 80%;
+        }
+
+        #footer-2>p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        #p1, #p2 {
+            width: 100%;
+        }
+
+        #p1 {
+            height: 80%;
+        }
+
+        #p2 {
+            height: 20%;
+            text-align: center;
+        }
+
+        #footer-1 > a {
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px;
+            line-height: 25px;
+            color: black;
+        }
+
+        /* 검색창 폼 스타일 추가 */
+        #search-form {
+            width: 80%;
+            height: 20%;
+            margin: auto;
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #search-form > div {
+            height: 100%;
+            float: left;
+        }
+
+        #search-text-area {
+            width: 80%;
+        }
+
+        #search-btn-area {
+            width: 20%;
+        }
+
+        #search-input, #search-btn {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        #navi {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;  /* 각 li가 세로 전체 채우도록 */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #37a737; /* 혹시나 navi 자체에도 배경 줄 수 있음 */
+        }
+        
+        #navi > li {
+            flex: 1;
+            height: 100%;
+            text-align: center;
+        }
+        
+        #navi li a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 900;
+            color: #fefefe;
+            background-color: #37a737;
+            width: 100%;
+            height: 100%;
+        }
+        
+
+        #navi li > ul {
+            list-style-type: none;
+            padding: 0;
+            display: none;
+        }
+
+        #navi li > a:hover + ul {
+            display: block;
+        }
+
+        #navi li ul:hover {
+            display: block;
+        }
+
+        #navi > li > ul > li > a {
+            font-size: 15px;
+        }
+
+        /* 로그인 폼 스타일 추가 */
+        #login_form {
+            width: 100%;
+            height: 30%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #login_form > div, #login_form > form {
+            width: 100%;
+        }
+
+        #login_form_input {
+            height: 80%;
+        }
+
+        #login_form_join {
+            height: 20%;
+            text-align: center;
+        }
+
+        #login_form_input > div {
+            height: 100%;
+            float: left;
+        }
+
+        #login_input_id_pwd {
+            width: 65%;
+        }
+
+        #login_input_btn {
+            width: 35%;
+        }
+
+        #login_input_id_pwd > div {
+            width: 100%;
+            height: 50%;
+        }
+
+        #input_id, #input_pwd, #login_btn {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+        #content-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2열 */
+            grid-template-rows: 1fr 1fr;    /* 2행 */
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            height: 100%;
+        }
+        
+        /* 한 칸에 이미지 + 텍스트 */
+        #content-2 .photo-item {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        /* 이미지 영역: 남은 공간 전부 채우고 텍스트 아래에 둠 */
+        #content-2 .photo-item img {
+            flex: 1;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0; /* 둥글기 제거 */
+        }
+        
+        /* 텍스트 */
+        #content-2 .photo-item p {
+            font-size: 14px;
+            text-align: center;
+            margin: 4px 0 0;
+            height: 20px; /* 고정 */
+            line-height: 20px;
+        }
+        
+        
+        /* content-3 위아래 이미지 */
+        #content-3 .side-image img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+
+        #content-3 .side-image img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <!-- header-1 : 로고 이미지 -->
+            <div id="header-1">
+                <a href="#">
+                    <img src="image/logo.png" id="home-logo" width="120px">
+                </a>
+            </div>
+
+            <!-- header-2 : 5_검색창폼 -->
+            <div id="header-2">
+                <img src="image/mainlogo.png" id="main-logo">
+            </div>
+            <div id="header-3"></div>
+        </div>
+
+        <!-- navigator : 6_navigator -->
+        <div id="navigator">
+            <ul id="navi">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Board</a></li>
+                <li><a href="#">Content</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div id="content-1">
+                <img src="image/left_img.png" id="left-logo">
+            </div>
+           <!-- content-2 : 이미지 격자 추가 -->
+           <!-- content-2 -->
+            <div id="content-2">
+                <div class="row">
+                    <div class="photo-item">
+                        <img src="image/main_img1.PNG" >
+                        <p>나무를 심는 사람들</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="image/main_img3.PNG" >
+                        <p>설악산 살리는 길</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="photo-item">
+                        <img src="image/main_img2.PNG" >
+                        <p>아이들에게 녹색 미래를..</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="image/main_img4.PNG" >
+                        <p>사라지는 북극곰들</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- content3 : 로그인폼 -->
+            <div id="content-3">
+                <div id="login_form">
+                    <form method="get" id="login_form_input">
+                        <div id="login_input_id_pwd">
+                            <div id="login_input_id">
+                                <input type="text" id="input_id" name="userId" placeholder="ID를 입력하세요.">
+                            </div>
+                            <div id="login_input_pwd">
+                                <input type="password" id="input_pwd" name="userPwd" placeholder="PWD를 입력하세요.">
+                            </div>
+                        </div>
+                        <div id="login_input_btn">
+                            <button type="submit" id="login_btn">로그인</button>
+                        </div>
+                    </form>
+                    <div id="login_form_join">
+                        <a href="#">회원가입</a> &nbsp;&nbsp;
+                        <a href="#">ID/PWD 찾기</a>
+                    </div>
+                </div>
+                <div class="side-image">
+                    <img src="image/right_img.PNG">
+                </div>
+                <div class="side-image">
+                    <img src="image/me_chat.PNG">
+                </div>
+            </div>
+        </div>
+
+        <!-- footer : 7_footer -->
+        <div id="footer">
+            <img src="image/footer.png" id="footer-logo">
+        </div>
+    </div>
+</body>
+
+</html>
