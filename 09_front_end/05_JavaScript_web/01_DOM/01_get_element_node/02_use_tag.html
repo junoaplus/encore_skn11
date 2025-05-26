@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>02_use tag name</title>
+</head>
+<body>
+    <h1>02. 태그 이름을 이용한 요소 노드 취득</h1>
+    <ul id="food">
+        <li>김치찌개</li>
+        <li>된장찌개</li>
+        <li>솥밥</li>
+    </ul>
+
+    <ul id="drink">
+        <li>아메리카노</li>
+        <li>토마토주스</li>
+        <li>돌체라떼</li>
+    </ul>
+
+    <script>
+        const $list = document.getElementsByTagName('li'); // HTMLCollection 객체 반환
+        console.log($list);
+
+        let changeColor = 0
+        for (let i = 0; i < $list.length; i++) {
+            $list[i].style.backgroundColor = 'rgb(130,220,' + changeColor + ')';
+            changeColor += 50;
+        }
+
+        Array.from($list).forEach(list => list.style.color = 'white');
+
+        const $drinkList = document.getElementById('drink')
+        const $listFromDrink = $drinkList.getElementsByTagName('li');
+        [...$listFromDrink].forEach(list => list.style.color = 'red');
+
+        const $noElem = document.getElementsByTagName('a');
+        console.log($noElem);
+    </script>
+</body>
+</html>
