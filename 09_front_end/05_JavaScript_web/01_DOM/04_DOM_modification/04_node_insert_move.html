@@ -27,5 +27,22 @@
     </script>
 
     <h3>노드 이동</h3>
+    <ul id="food">
+        <li>불고기 백반</li>
+        <li>햄버거 세트</li>
+    </ul>
+
+    <script>
+        const $food = document.getElementById('food');
+
+        // const $bulgogi = $food.firstElementChild;
+        // const $hamburger = $food.lastElementChild;
+        const [$bulgogi, $hamburger] = $food.children;
+
+        $drink.appendChild($bulgogi);
+        $drink.insertBefore($hamburger, $bulgogi);
+
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>(3) addEventListener 메서드 방식</h3>
+
+    <button id="btn">Click me!</button>
+
+    <script>
+        const $btn = document.getElementById('btn');
+        $btn.addEventListener('click', function() {
+            console.log('클릭!');
+        });
+        // 이벤트 핸들러 프로퍼티에 바인딩된 함수 동작에 영향주지 않음
+        $btn.onclick = function() {
+            alert('클릭2!');
+        };
+        // 동일한 html 요소에서 발생한 동이한 이벤트에 함수 추가 등록 가능
+        $btn.addEventListener('click', function() {
+            console.log('addEventListener 방식으로 이벤트 핸들러 등록!');
+        });
+
+        // 참조가 동일한 이벤트 핸들러를 중복 등록하면 하나만 동작
+        const handlerMouseOver = () => alter('Mous Over');
+        $btn.addEventListener('mouseover', handlerMouseOver);
+        $btn.addEventListener('mouseover', handlerMouseOver);
+    </script>
+</body>
+</html>
